@@ -25,7 +25,7 @@ class WebServerReadinessProbeTraitTest extends TestCase
     /**
      * @dataProvider provideTerminatedProcesses
      */
-    public function testTerminatedProcess(bool $disableOutput, string $expectedMessage): void
+    public function testTerminatedProcess(bool $disableOutput, string $expectedMessage)
     {
         $process = new Process([\PHP_BINARY, '-r', 'fwrite(STDERR, "Startup failed."); exit(1);']);
         if ($disableOutput) {
